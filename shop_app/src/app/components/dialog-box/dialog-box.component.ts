@@ -1,5 +1,5 @@
 import { Component, Inject } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
@@ -19,13 +19,28 @@ export class DialogBoxComponent {
 
   myForm: FormGroup = new FormGroup({
     id: new FormControl(this.data?.id ?? null),
-    title: new FormControl(this.data?.title ?? ''),
-    price: new FormControl(this.data?.price ?? ''),
-    year: new FormControl(this.data?.year ?? ''),
-    chip: new FormControl(this.data?.configure.chip ?? ''),
-    ssd: new FormControl(this.data?.configure.ssd ?? ''),
-    memory: new FormControl(this.data?.configure.memory ?? ''),
-    display: new FormControl(this.data?.configure.display ?? ''),
+    title: new FormControl(this.data?.title ?? '', [
+      Validators.required,
+      Validators.minLength(3),
+    ]),
+    price: new FormControl(this.data?.price ?? '', [
+      Validators.required,
+      Validators.pattern(/^[0-9]+$/),
+    ]),
+    year: new FormControl(this.data?.year ?? '', [
+      Validators.required,
+      Validators.minLength(4),
+    ]),
+    chip: new FormControl(this.data?.configure.chip ?? '', Validators.required),
+    ssd: new FormControl(this.data?.configure.ssd ?? '', Validators.required),
+    memory: new FormControl(
+      this.data?.configure.memory ?? '',
+      Validators.required
+    ),
+    display: new FormControl(
+      this.data?.configure.display ?? '',
+      Validators.required
+    ),
   });
 
   isNew: boolean = true;
@@ -35,6 +50,7 @@ export class DialogBoxComponent {
   }
 
   onSubmit() {
+    console.log(this.myForm);
     this.data = {
       id: this.myForm.value.id,
       title: this.myForm.value.title,

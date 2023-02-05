@@ -27,27 +27,14 @@
       }
     },
     {
-      "id": 5,
-      "title": "Gotr",
-      "price": "1236",
-      "year": "1222",
-      "image": "assets/images/macbook.jpeg",
-      "configure": {
-        "chip": "rrrrrrrrrrr",
-        "ssd": "rrrrrrrrrrrrr",
-        "memory": "rrrrrrrrrr",
-        "display": "rrrrrrrrrrrrr"
-      }
-    },
-    {
       "id": 7,
-      "title": "wwwwwwwwww",
-      "price": "777777",
-      "year": "1234",
+      "title": "Dell",
+      "price": "556",
+      "year": "8798",
       "image": "assets/images/macbook.jpeg",
       "configure": {
         "chip": "wsrfwsf",
-        "ssd": "sdsd",
+        "ssd": "",
         "memory": "uuuuuuuuuuu",
         "display": "fsdfsdf"
       }
@@ -56,13 +43,26 @@
       "id": 8,
       "title": "rrrrrrrrrrrrr",
       "price": "22222",
-      "year": "1678",
+      "year": "2024",
       "image": "assets/images/macbook.jpeg",
       "configure": {
         "chip": "rtghdt",
         "ssd": "dgfdggd",
         "memory": "fffffffffffff",
         "display": "fffffffffffffff"
+      }
+    },
+    {
+      "id": 9,
+      "title": "Rest",
+      "price": "120",
+      "year": "2020",
+      "image": "assets/images/macbook.jpeg",
+      "configure": {
+        "chip": "mkk",
+        "ssd": "jjhj",
+        "memory": "jjjjjj",
+        "display": "jjjjkk"
       }
     }
   ],

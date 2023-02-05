@@ -1,35 +1,101 @@
 <form [formGroup]="myForm" (ngSubmit)="onSubmit()" class="example-form">
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Title</mat-label>
-    <input matInput formControlName="title" />
+    <input id="title" matInput formControlName="title" />
+    <div
+      *ngIf="myForm.get('title')?.invalid && myForm.get('title')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('title')?.errors?.['required']"
+        >The field is required!</small
+      >
+      <small *ngIf="myForm.get('title')?.errors?.['minlength']"
+        >Title must be at least 3 characters long!</small
+      >
+    </div>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Price</mat-label>
-    <input matInput formControlName="price" />
+    <input id="price" matInput formControlName="price" />
+    <div
+      *ngIf="myForm.get('price')?.invalid && myForm.get('price')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('price')?.errors?.['required']"
+        >The field is required!</small
+      >
+      <small *ngIf="myForm.get('price')?.errors?.['pattern']"
+        >Enter a numeric value!</small
+      >
+    </div>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Year</mat-label>
-    <input matInput formControlName="year" />
+    <input id="year" matInput formControlName="year" />
+    <div
+      *ngIf="myForm.get('year')?.invalid && myForm.get('year')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('year')?.errors?.['required']"
+        >The field is required!</small
+      >
+      <small *ngIf="myForm.get('year')?.errors?.['minlength']"
+        >Year must be at least 4 characters long!</small
+      >
+    </div>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Chip</mat-label>
-    <input matInput formControlName="chip" />
+    <input id="chip" matInput formControlName="chip" />
+    <div
+      *ngIf="myForm.get('chip')?.invalid && myForm.get('chip')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('chip')?.errors?.['required']"
+        >The field is required!</small
+      >
+    </div>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>SSD</mat-label>
-    <input matInput formControlName="ssd" />
+    <input id="ssd" matInput formControlName="ssd" />
+    <div
+      *ngIf="myForm.get('ssd')?.invalid && myForm.get('ssd')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('ssd')?.errors?.['required']"
+        >The field is required!</small
+      >
+    </div>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Memory</mat-label>
-    <input matInput formControlName="memory" />
+    <input id="memory" matInput formControlName="memory" />
+    <div
+      *ngIf="myForm.get('memory')?.invalid && myForm.get('memory')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('memory')?.errors?.['required']"
+        >The field is required!</small
+      >
+    </div>
   </mat-form-field>
   <mat-form-field class="example-full-width" appearance="fill">
     <mat-label>Display</mat-label>
-    <input matInput formControlName="display" />
+    <input id="display" matInput formControlName="display" />
+    <div
+      *ngIf="myForm.get('display')?.invalid && myForm.get('display')?.touched"
+      class="danger"
+    >
+      <small *ngIf="myForm.get('display')?.errors?.['required']"
+        >The field is required!</small
+      >
+    </div>
   </mat-form-field>
 
   <button
     class="button"
+    [disabled]="myForm.invalid"
     mat-flat-button
     style="margin-right: 2px"
     color="primary"
